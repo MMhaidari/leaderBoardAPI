@@ -1,0 +1,79 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: cursive, sans-serif;
+  background-color: #f0f0f0;
+}
+
+.main-container {
+  max-width: 85rem;
+  margin: 0 auto;
+}
+
+.primary-header {
+  font-size: 3rem;
+  padding: 4rem;
+  font-weight: 700;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-items: center;
+  width: 85rem;
+  margin: 0 auto;
+}
+
+.add-score-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.add-score-form button {
+  align-self: flex-end;
+}
+
+.add-score-form input,
+.add-score-form button {
+  border: 0.2rem solid #000;
+  padding: 0.2rem 0.3rem;
+  border-radius: 6%;
+}
+
+.my-row {
+  display: flex;
+  gap: 2.8rem;
+}
+
+.my-row button {
+  padding: 0.5rem 1rem;
+  border: 0.2rem solid #000;
+  font-weight: 700;
+  box-shadow: 0 0.3rem 0.3rem 0.3rem rgba(0, 0, 0, 0.2);
+}
+
+.my-row button:hover {
+  cursor: pointer;
+}
+
+.my-row button:link,
+.my-row button:active {
+  box-shadow: none;
+}
+
+.populate {
+  list-style: none;
+  border: 0.2rem solid #000;
+  margin-top: 2rem;
+}
+
+.populate li:nth-child(even) {
+  background-color: #d6d6d6;
+}
