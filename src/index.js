@@ -1,6 +1,18 @@
 import './index.css';
-import UI from '../modules/populate';
+import Game from '../modules/api';
+
+const form = document.querySelector('#form');
+const refreshBtn = document.querySelector('.refresh');
 
 document.addEventListener('DOMContentLoaded', () => {
-  UI.display();
+  Game.displayScores();
+});
+
+form.addEventListener('submit', (e) => {
+  e.preventDefault();
+  Game.createNewScore();
+  Game.clearForm();
+});
+refreshBtn.addEventListener('click', () => {
+  Game.displayScores();
 });
