@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap');
+
 * {
   margin: 0;
   padding: 0;
@@ -5,18 +7,23 @@
 }
 
 body {
-  font-family: cursive, sans-serif;
-  background-color: #f0f0f0;
+  font-family: 'PT Sans', sans-serif;
+  background-color: #1098ad;
 }
 
 .main-container {
-  max-width: 85rem;
+  max-width: 70rem;
   margin: 0 auto;
+  background-color: #fff;
+  margin-top: 12vh;
+  box-shadow: rgba(17, 17, 26, 0.1) 0 4px 16px, rgba(17, 17, 26, 0.1) 0 8px 24px, rgba(17, 17, 26, 0.1) 0 16px 56px;
+  border-radius: 0.6rem;
 }
 
 .primary-header {
   font-size: 3rem;
-  padding: 4rem;
+  padding: 4rem 4rem 4rem 2rem;
+  color: #0c8599;
   font-weight: 700;
 }
 
@@ -24,37 +31,64 @@ body {
   display: grid;
   grid-template-columns: 1fr 1fr;
   justify-items: center;
-  width: 85rem;
-  margin: 0 auto;
+  padding-bottom: 3.2rem;
+}
+
+.my-form {
+  width: 100%;
+  padding: 1rem 3.2rem 3.2rem 3.2rem;
+}
+
+.my-form h2 {
+  color: #1098ad;
 }
 
 .add-score-form {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: stretch;
   gap: 1rem;
   margin-top: 2rem;
 }
 
 .add-score-form button {
   align-self: flex-end;
+  padding: 0.5rem;
 }
 
-.add-score-form input,
-.add-score-form button {
-  border: 0.2rem solid #000;
-  padding: 0.2rem 0.3rem;
-  border-radius: 6%;
+.add-score-form input {
+  padding: 0.5rem;
+  border: none;
+  box-shadow: rgba(60, 64, 67, 0.3) 0 1px 2px 0, rgba(60, 64, 67, 0.15) 0 2px 6px 2px;
+}
+
+.add-score-form input:focus {
+  border: none;
+  outline: 0.2rem solid #66d9e8;
+}
+
+.scores {
+  width: 100%;
+  padding: 1.8rem;
+  margin-left: 3.2rem;
+  box-shadow: rgba(0, 0, 0, 0.07) 0 1px 2px, rgba(0, 0, 0, 0.07) 0 2px 4px, rgba(0, 0, 0, 0.07) 0 4px 8px, rgba(0, 0, 0, 0.07) 0 8px 16px, rgba(0, 0, 0, 0.07) 0 16px 32px, rgba(0, 0, 0, 0.07) 0 32px 64px;
 }
 
 .my-row {
   display: flex;
-  gap: 2.8rem;
+  justify-content: space-between;
+  padding: 0 0.8rem 0 0.8rem;
+}
+
+.my-row h2 {
+  color: #1098ad;
 }
 
 .my-row button {
   padding: 0.5rem 1rem;
-  border: 0.2rem solid #000;
+  border: 0.1rem solid #1098ad;
+  color: #1098ad;
+  background-color: transparent;
   font-weight: 700;
   box-shadow: 0 0.3rem 0.3rem 0.3rem rgba(0, 0, 0, 0.2);
 }
@@ -70,10 +104,95 @@ body {
 
 .populate {
   list-style: none;
-  border: 0.2rem solid #000;
   margin-top: 2rem;
+  height: 15rem;
+  overflow-y: auto;
+  scroll-behavior: smooth;
 }
 
-.populate li:nth-child(even) {
-  background-color: #d6d6d6;
+.populate::-webkit-scrollbar {
+  width: 1rem;
+}
+
+.populate::-webkit-scrollbar-thumb {
+  background: #0c8599;
+  border-radius: 0.3rem;
+}
+
+.populate::-webkit-scrollbar-thumb:hover {
+  cursor: pointer;
+  background: #0b7285;
+}
+
+.populate li {
+  padding: 0.5rem;
+  margin: 0.5rem;
+  border-left: 0.2rem solid #1098ad;
+  box-shadow: rgba(0, 0, 0, 0.16) 0 3px 6px, rgba(0, 0, 0, 0.23) 0 3px 6px;
+  text-transform: capitalize;
+  animation: moveInBottom 1s ease-in-out;
+}
+
+.submit {
+  font-size: 1.5rem;
+  background-color: #1098ad;
+  color: #fff;
+  border: none;
+  box-shadow: 0 0.3rem 0.3rem 0.3rem rgba(0, 0, 0, 0.2);
+  border-radius: 0.5rem;
+}
+
+.submit:hover {
+  cursor: pointer;
+}
+
+.submit:link,
+.submit:active {
+  box-shadow: none;
+}
+
+@keyframes moveInBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(3rem);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+@media (max-width: 650px) {
+  html {
+    font-size: 56%;
+  }
+
+  .main-container {
+    width: 95%;
+    margin-top: 2vh;
+  }
+
+  .primary-header {
+    text-align: center;
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+    width: 80vw;
+    margin: 0 auto;
+    font-size: 1.5rem;
+  }
+
+  .scores {
+    margin-left: 0;
+  }
+
+  .populate {
+    overflow: visible;
+    height: auto;
+  }
 }
